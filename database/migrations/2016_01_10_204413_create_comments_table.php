@@ -13,7 +13,7 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        /*Schema::create('comments', function (Blueprint $table) {
         
             $table->increments('id');
             $table->text('description');
@@ -22,7 +22,7 @@ class CreateCommentsTable extends Migration
             $table->integer('fk_task_id')->unsigned();
             $table->foreign('fk_task_id')->references('id')->on('tasks');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -32,8 +32,8 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        /*DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('comments');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');*/
     }
 }

@@ -21,15 +21,14 @@
         <div id="collapseOne" class="panel-collapse">
             <div class="box-body">
               <div>
-                  <graphline class="chart" :labels="{{json_encode($createdTaskEachMonths)}}" :values="{{json_encode($taskCreated)}}" :valuesextra="{{json_encode($taskCompleted)}}"></graphline>
+                  ...
               </div>
             </div>
         </div>
     </div>
      <div class="box box-primary">
         <div class="box-header with-border">
-             <h4 class="box-title"
->
+             <h4 class="box-title">
                  @lang('dashboard.leads.each_month')
              </h4>
              <div class="box-tools pull-right">
@@ -41,8 +40,7 @@
         <div id="collapseTwo" class="panel-collapse">
             <div class="box-body">
               <div >
-                <graphline class="chart" :labels="{{json_encode($createdLeadEachMonths)}}" :values="{{json_encode($leadCreated)}}" :valuesextra="{{json_encode($leadsCompleted)}}"></graphline>
-
+                ...
               </div>
             </div>
         </div>
@@ -57,13 +55,13 @@
 
             <div class="info-box-content">
               <span class="info-box-text">@lang('dashboard.tasks.all')</span>
-              <span class="info-box-number">{{$allCompletedTasks}} / {{$alltasks}}</span>
+              <span class="info-box-number">All Completed / All</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: {{$totalPercentageTasks}}%"></div>
               </div>
                   <span class="progress-description">
-                    {{number_format($totalPercentageTasks, 0)}}% @lang('dashboard.completed')
+                    Percentage completed
                   </span>
             </div>
             <!-- /.info-box-content -->
@@ -82,7 +80,7 @@
                 <div class="progress-bar" style="width: {{$totalPercentageLeads}}%"></div>
               </div>
                   <span class="progress-description">
-                    {{number_format($totalPercentageLeads, 0)}}% @lang('dashboard.completed')
+                    Percentage leads
                   </span>
             </div>
             <!-- /.info-box-content -->

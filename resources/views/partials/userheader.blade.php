@@ -7,7 +7,7 @@
   @endif />
 </div>
 
-<h1>{{ $contact->name }} ({{$contact->department->first()->name}}) </h1>
+<h1>{{ $contact->name }} () </h1>
 
          
 <!--MAIL-->         

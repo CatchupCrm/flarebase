@@ -50,8 +50,7 @@
 {!! 
     Form::select('departments',
     $departments,
-    isset($user) 
-    ? $user->departmentOne->first()->id : null,
+    null,
     ['class' => 'form-control']) !!}
 </div>
 

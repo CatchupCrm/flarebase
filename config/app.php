@@ -148,6 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Notifications\NotificationServiceProvider::class,
+
         Collective\Html\HtmlServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
      
@@ -164,7 +165,25 @@ return [
         App\Providers\AccessServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
-       
+
+
+
+
+
+
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        \Conner\Tagging\Providers\TaggingServiceProvider::class,
+        Nwidart\Modules\LaravelModulesServiceProvider::class,
+        igaster\laravelTheme\themeServiceProvider::class,
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        Arrilot\Widgets\ServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+
+
+
+
+
 
     ],
 
@@ -225,7 +244,13 @@ return [
         'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
         'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
 
-        'ExchangeWebServices' => EwsBridge\Facade\ExchangeWebServices::class
+        'ExchangeWebServices' => EwsBridge\Facade\ExchangeWebServices::class,
+        'Module' => Nwidart\Modules\Facades\Module::class,
+        'Theme' => igaster\laravelTheme\Facades\Theme::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        \Spatie\Pjax\Middleware\FilterIfPjax::class,
+
+
 
 
 

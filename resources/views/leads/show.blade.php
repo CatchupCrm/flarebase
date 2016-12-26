@@ -31,7 +31,8 @@ $(document).ready(function(){
       </div>
               <?php $i=1 ?>
        
-          @foreach($leads->notes as $note)
+          {{--
+            @foreach($leads->notes as $note)
           <div class="taskcase" style="margin-top:15px; padding-top:10px;">
                   <p  class="smalltext">#{{$i++}}</p>
                   <p>  {{$note->note}}</p>
@@ -42,7 +43,7 @@ $(document).ready(function(){
           <br/>@lang('lead.status.modified'): {{date('d F, Y, H:i:s', strtotime($note->updated_at))}}
           @endif</p>
                   </div>
-          @endforeach
+          @endforeach --}}
   <br />
          {!! Form::open(array('url' => array('/leads/notes',$leads->id, ))) !!}
           <div class="form-group">

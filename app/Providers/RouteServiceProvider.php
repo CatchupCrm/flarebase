@@ -30,6 +30,10 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapWebRoutes();
+
+        $this->mapCustomerRoutes();
+
+        $this->mapStaffRoutes();
         $this->mapApiRoutes();
         //
     }
@@ -66,4 +70,39 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+
+    /**
+     * Define the "staff" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapCustomerRoutes()
+    {
+        Route::group([
+            'middleware' => 'customer',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/customer.php');
+        });
+    }
+
+    /**
+     * Define the "staff" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapStaffRoutes()
+    {
+        Route::group([
+            'middleware' => 'staff',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/staff.php');
+        });
+    }    
+    
 }

@@ -25,12 +25,10 @@ class CreateClientsTable extends Migration
             $table->string('city');
             $table->string('company_name');
             $table->string('vat');
-            $table->string('industry');
             $table->string('company_type');
             $table->integer('fk_user_id')->unsigned();
             $table->foreign('fk_user_id')->references('id')->on('users');
-            $table->integer('industry_id')->unsigned();
-            $table->foreign('industry_id')->references('id')->on('industries');
+            $table->softdeletes();
             $table->timestamps();
         });
     }

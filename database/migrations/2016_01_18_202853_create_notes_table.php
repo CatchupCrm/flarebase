@@ -12,7 +12,7 @@ class CreateNotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('notes', function (Blueprint $table) {
+        /*Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
             $table->text('note');
             $table->integer('status');
@@ -21,7 +21,7 @@ class CreateNotesTable extends Migration
             $table->integer('fk_lead_id')->unsigned();
             $table->foreign('fk_lead_id')->references('id')->on('leads');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -31,8 +31,8 @@ class CreateNotesTable extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        /*DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('notes');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');*/
     }
 }

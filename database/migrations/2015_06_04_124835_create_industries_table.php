@@ -12,10 +12,10 @@ class CreateIndustriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('industries', function (Blueprint $table) {
+        /*Schema::create('industries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-        });
+        });*/
     }
 
     /**
@@ -25,6 +25,6 @@ class CreateIndustriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('industries');
+        //Schema::drop('industries');
     }
 }
