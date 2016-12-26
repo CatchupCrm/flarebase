@@ -16,7 +16,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth'], 'prefix'=>'admincp'], function () {
     /**
      * MAIN
      */

@@ -8,7 +8,7 @@ use Cache;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Staff extends Authenticatable
 {
 
     use Notifiable, EntrustUserTrait;
@@ -18,7 +18,7 @@ class User extends Authenticatable
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'staff';
 
     /**
      * The attributes that are mass assignable.
@@ -38,70 +38,54 @@ class User extends Authenticatable
 
     protected $primaryKey ='id';
 
-
-
-    /*public function tasksAssign()
+    public function tasksAssign()
     {
         return $this->hasMany(Tasks::class, 'fk_user_id_assign', 'id')
         ->where('status', 1)
         ->orderBy('deadline', 'asc');
-    }*/
-
-
-
-    /*public function tasksCreated()
+    }
+    public function tasksCreated()
     {
         return $this->hasMany(Tasks::class, 'fk_user_id_created', 'id')->limit(10);
-    }*/
+    }
 
-    /*public function tasksCompleted()
+    public function tasksCompleted()
     {
         return $this->hasMany(Tasks::class, 'fk_user_id_assign', 'id')->where('status', 2);
-    }*/
+    }
     
-    /*public function tasksAll()
+    public function tasksAll()
     {
         return $this->hasMany(Tasks::class, 'fk_user_id_assign', 'id')->whereIn('status', [1, 2]);
-    }*/
-
-
-
-    /*public function leadsAll()
+    }
+    public function leadsAll()
     {
         return $this->hasMany(Leads::class, 'fk_user_id', 'id');
-    }*/
-
-
-    /*public function settings()
+    }
+    public function settings()
     {
         return $this->belongsTo(Settings::class);
-    }*/
+    }
 
-    /*public function clientsAssign()
+    public function clientsAssign()
     {
         return $this->hasMany(Client::class, 'fk_user_id', 'id');
-    }*/
+    }
 
-    /*public function userRole()
+    public function userRole()
     {
         return $this->hasOne(RoleUser::class, 'user_id', 'id');
-    }*/
-
-
-    /*public function department()
+    }
+    public function department()
     {
         return $this->belongsToMany(Department::class, 'department_user');
-    }*/
-
-
-    /*public function departmentOne()
+    }
+    public function departmentOne()
     {
         return $this->belongsToMany(Department::class, 'department_user')->withPivot('Department_id');
-    }*/
-
-
+    }
     public function isOnline()
     {
-        return Cache::has('user-is-online-' . $this->id);
+        return Cache::has('staff-is-online-' . $this->id);
     }
 }

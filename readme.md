@@ -15,6 +15,18 @@ I would like to refer to the wiki, for help on getting started
 * [Installation with Docker](https://github.com/Bottelet/Flarepoint-crm/wiki/Install-using-Docker)
 * [Insertion of dummy data](https://github.com/Bottelet/Flarepoint-crm/wiki/Insertion-of-dummy-data)
 
+## Install
+
+**Login**: admin@site.com
+**Password**: password
+
+* After cloning the repository run `composer install`
+* Create `.env` file from `.env.example`
+* Run `php artisan key:generate`
+* Configure database connection
+* Run `php artisan migrate --seed`
+
+
 ## Features overview
 - Tasks management
 - Leads management

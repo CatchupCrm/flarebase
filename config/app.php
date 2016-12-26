@@ -155,6 +155,13 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
 
+
+        /*
+         * SleepingOwl Service Provider
+         */
+          SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
+
+
         /*
          * Application Service Providers...
          */
