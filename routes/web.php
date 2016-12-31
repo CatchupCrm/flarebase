@@ -13,7 +13,17 @@
 Route::auth();
 Route::get('/logout', 'Auth\LoginController@logout');
 
+Route::group(['middleware' => ['setTheme:bootstrap']], function () {
+    // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
+    Route::get('/', array('uses'=>'Modules\Core\HomeController@getIndex'));
+    //Route::get('/', 'UNStarter\StarterController@landing');
+    //Route::get('landing', 'UNStarter\StarterController@landing');
+
+    /*Route::get('frontend', function () {
+        return view('unstarter.frontend.components_common');
+    });*/
+});
 
 
 Route::group(['middleware' => ['auth'], 'prefix'=>'admincp'], function () {
@@ -102,6 +112,22 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'admincp'], function () {
 
 
 
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('/login', 'Auth\LoginController@showLoginForm');
+    Route::post('/login', 'Auth\LoginController@login');
+    Route::post('/logout', 'Auth\LoginController@logout');
+
+    Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
+    Route::post('/register', 'Auth\RegisterController@register');
+
+    Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+    Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
+    Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+    Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+});
+
+
+
 
 Route::group(['prefix' => 'staff'], function () {
     Route::get('/login', 'StaffAuth\LoginController@showLoginForm');
@@ -118,20 +144,3 @@ Route::group(['prefix' => 'staff'], function () {
 });
 
 
-
-
-
-
-Route::group(['prefix' => 'customer'], function () {
-    Route::get('/login', 'CustomerAuth\LoginController@showLoginForm');
-    Route::post('/login', 'CustomerAuth\LoginController@login');
-    Route::post('/logout', 'CustomerAuth\LoginController@logout');
-
-    Route::get('/register', 'CustomerAuth\RegisterController@showRegistrationForm');
-    Route::post('/register', 'CustomerAuth\RegisterController@register');
-
-    Route::post('/password/email', 'CustomerAuth\ForgotPasswordController@sendResetLinkEmail');
-    Route::post('/password/reset', 'CustomerAuth\ResetPasswordController@reset');
-    Route::get('/password/reset', 'CustomerAuth\ForgotPasswordController@showLinkRequestForm');
-    Route::get('/password/reset/{token}', 'CustomerAuth\ResetPasswordController@showResetForm');
-});

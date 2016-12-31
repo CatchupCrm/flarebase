@@ -63,6 +63,18 @@ return [
 			'asset-path' 	=> '',
 		],
 
+        /*'BasicTheme' => [
+            'extends' => null,
+            'views-path' => 'resources/views/BasicTheme',
+            'asset-path' => 'public/themes/BasicTheme',
+        ],
+
+        'ExtraTheme' => [
+            'extends' => 'starterkit',
+            'views-path' => 'resources/views/ExtraTheme',
+            'asset-path' => 'public/themes/ExtraTheme',
+        ],*/
+
 		// Add your themes here...
 
 		/*--------------[ Example Structre ]-------------
@@ -79,7 +91,7 @@ return [
 			],
 
 
-			// This theme extends BasicTheme and ovverides SOME views\assets in its folders
+      // This theme extends BasicTheme and overrides SOME views/assets in its folders
 
 			'AnotherTheme' => [
 				'extends'	=> 'BasicTheme',

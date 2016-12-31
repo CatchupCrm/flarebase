@@ -63,6 +63,7 @@ class Kernel extends HttpKernel
         'staff.guest' => \App\Http\Middleware\RedirectIfStaff::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'setTheme' => \igaster\laravelTheme\Middleware\setTheme::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
