@@ -1,0 +1,15 @@
+{
+    "name": "Kb",
+    "alias": "kb",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Kb\\Providers\\KbServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}
